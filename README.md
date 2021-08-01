@@ -9,3 +9,5 @@
 OpenAI GPT-2 Output Dataset: https://github.com/openai/gpt-2-output-dataset 
 For my purposes, yields 5k records each of real web documents from test set.
 Yields 5k records each from the outputs of 8 baseline GPT-2 models (small, medium, large, xl)X(temp1 & no trucncation,top-k 40 truncation).
+
+Baseline evaluated data in Data folder.
