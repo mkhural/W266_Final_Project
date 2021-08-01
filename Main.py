@@ -224,7 +224,7 @@ def get_gruen(candidates):
     focus_score = get_focus_score(processed_candidates)
     component_scores = [zip(grammaticality_score, redundancy_score, focus_score)]
     gruen_score = [min(1, max(0, sum(i))) for i in zip(grammaticality_score, redundancy_score, focus_score)]
-    gruen_output = [zip(gruen_score,grammaticality_score, redundancy_score, focus_score)]
+    gruen_output = [list(a) for a in zip(gruen_score,grammaticality_score, redundancy_score, focus_score)]
     return gruen_output
 
 
