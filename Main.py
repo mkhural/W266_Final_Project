@@ -216,7 +216,7 @@ def get_focus_score(all_summary):
     return focus_score
 
 
-## Altered script to return all component scores of gruen
+## Altered script to return gruen score and all component scores of gruen in a single tuple list
 def get_gruen(candidates):
     processed_candidates = preprocess_candidates(candidates)
     grammaticality_score = get_grammaticality_score(processed_candidates)
@@ -224,8 +224,9 @@ def get_gruen(candidates):
     focus_score = get_focus_score(processed_candidates)
     component_scores = [zip(grammaticality_score, redundancy_score, focus_score)]
     gruen_score = [min(1, max(0, sum(i))) for i in zip(grammaticality_score, redundancy_score, focus_score)]
-    return gruen_score
-    return component_scores
+    gruen_output = [zip(gruen_score,grammaticality_score, redundancy_score, focus_score)]
+    return gruen_output
+
 
 
 if __name__ == "__main__":
